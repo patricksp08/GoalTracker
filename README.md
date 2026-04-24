@@ -156,6 +156,69 @@ Acesse em:
 
 ---
 
+## 🧪 Testes Automatizados
+
+O projeto possui testes automatizados para garantir o funcionamento das principais funcionalidades, como:
+
+* Autenticação de usuários
+* Atualização de perfil
+* Upload de imagem de perfil
+* CRUD de metas
+* Regras de autorização (Policies)
+
+### ▶️ Como rodar os testes
+
+Execute o comando:
+
+```bash
+php artisan test
+```
+
+Ou, se preferir mais detalhes:
+
+```bash
+php artisan test -v
+```
+
+---
+
+### 📌 Exemplos de testes implementados
+
+* ✔ Usuário autenticado pode acessar suas metas
+* ✔ Usuário não pode acessar metas de outros usuários
+* ✔ Usuário pode atualizar seu perfil
+* ✔ Upload de imagem de perfil funciona corretamente
+* ✔ Usuário não pode editar/deletar dados de outro usuário
+
+---
+
+### 🧰 Tecnologias utilizadas nos testes
+
+* PHPUnit (nativo do Laravel)
+* Factories para geração de dados
+* RefreshDatabase para isolamento dos testes
+* Storage::fake para simulação de upload de arquivos
+
+---
+
+### 📊 Cobertura
+
+Os testes cobrem os fluxos principais da aplicação, garantindo:
+
+* Integridade dos dados
+* Segurança de acesso
+* Funcionamento das regras de negócio
+
+---
+
+💡 Para executar um teste específico:
+
+```bash
+php artisan test --filter=NomeDoTeste
+```
+
+---
+
 ## 👨‍💻 Autor
 
 Desenvolvido por Patrick
