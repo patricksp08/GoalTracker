@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Password;
 
 class UserRequest extends FormRequest
 {
@@ -12,7 +13,15 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users,email,' . $this->route('user'),
-            'password' => 'nullable|min:6',
+            'password' => [
+                'nullable',
+                'confirmed',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols(),
+            ],
             'photo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ];
     }
