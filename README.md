@@ -104,6 +104,7 @@ cp .env.example .env
 Configure o banco de dados no `.env`:
 
 ```env
+DB_CONNECTION=mysql
 DB_DATABASE=nome_do_banco
 DB_USERNAME=root
 DB_PASSWORD=
