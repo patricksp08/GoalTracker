@@ -151,8 +151,7 @@ Acesse em:
 
 <img width="1306" height="525" alt="image" src="https://github.com/user-attachments/assets/3c47a863-252a-4826-9825-8f41638d5ea7" />
 <br>
-<img width="1315" height="529" alt="image" src="https://github.com/user-attachments/assets/4237530a-d138-4e63-94a2-b88cda457c55" />
-
+<img width="1304" height="456" alt="image" src="https://github.com/user-attachments/assets/73403eac-df61-443d-b221-0d52c28dcd6a" />
 
 ---
 
