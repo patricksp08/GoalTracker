@@ -146,16 +146,6 @@ Acesse em:
 
 ---
 
-## 🧪 Melhorias futuras
-
-* Testes automatizados
-* API REST
-* Notificações
-* Gráficos com Chart.js
-* Dark mode
-
----
-
 ## 📷 Demonstração
 
 <img width="1306" height="525" alt="image" src="https://github.com/user-attachments/assets/3c47a863-252a-4826-9825-8f41638d5ea7" />
