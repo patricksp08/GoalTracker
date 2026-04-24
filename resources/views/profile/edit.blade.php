@@ -53,7 +53,32 @@
         </div>
 
         <button class="btn btn-success" type="submit">Atualizar</button>
+
+        <hr>
     </form>
+    
+    <div class="card border-danger mt-4">
+        <div class="card-body">
+
+            <h5 class="text-danger mb-2">Zona de Perigo</h5>
+
+            <p class="text-muted mb-3">
+                Ao excluir sua conta, todos os seus dados serão permanentemente removidos.
+                Esta ação não pode ser desfeita.
+            </p>
+
+            <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+
+                <button class="btn btn-danger"
+                        onclick="return confirm('Tem certeza absoluta que deseja excluir sua conta?')">
+                    🗑️ Excluir Conta
+                </button>
+            </form>
+
+        </div>
+    </div>
 </div>
 @endsection
 

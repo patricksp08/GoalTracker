@@ -48,6 +48,15 @@
                 </td>
                 <td>
                     <a href="{{ route('goals.edit', $goal->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                    <form action="{{ route('goals.destroy', $goal->id) }}" method="POST" style="display:inline">
+                        @csrf
+                        @method('DELETE')
+
+                        <button class="btn btn-danger btn-sm"
+                                onclick="return confirm('Tem certeza que deseja excluir esta meta?')">
+                            Excluir
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
