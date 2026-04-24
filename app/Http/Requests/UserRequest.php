@@ -15,7 +15,6 @@ class UserRequest extends FormRequest
             'email' => 'required|email|unique:users,email,' . $this->route('user'),
             'password' => [
                 'nullable',
-                'confirmed',
                 Password::min(8)
                     ->letters()
                     ->mixedCase()
