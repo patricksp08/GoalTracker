@@ -23,8 +23,6 @@ class GoalController extends Controller
 
     public function create()
     {
-        $this->authorize('view', $goal);
-
         return view('goals.create');
     }
 
