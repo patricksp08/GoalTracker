@@ -14,19 +14,23 @@ class UserService
 
     public function update($id, $data)
     {
-        $user = $this->find($id);
+        $user = User::findOrFail($id);
 
-        if (isset($data['photo'])) {
+        // Upload da foto
+        if (isset($data['photo']) && $data['photo'] instanceof \Illuminate\Http\UploadedFile) {
+
+            // Deleta antiga
             if ($user->photo) {
                 Storage::disk('public')->delete($user->photo);
             }
 
             $data['photo'] = $data['photo']->store('users', 'public');
+        } else {
+            unset($data['photo']);
         }
 
-        if (!empty($data['password'])) {
-            $data['password'] = bcrypt($data['password']);
-        } else {
+        // Senha opcional
+        if (empty($data['password'])) {
             unset($data['password']);
         }
 

@@ -3,8 +3,9 @@ namespace App\Http\Controllers;
 
 use App\Services\GoalService;
 use App\Http\Requests\GoalRequest;
+use App\Models\Goal;
 
-class GoalController
+class GoalController extends Controller
 {
     protected $service;
 
@@ -16,11 +17,14 @@ class GoalController
     public function index()
     {
         $goals = $this->service->list(auth()->id());
+
         return view('goals.index', compact('goals'));
     }
 
     public function create()
     {
+        $this->authorize('view', $goal);
+
         return view('goals.create');
     }
 
@@ -36,6 +40,8 @@ class GoalController
     public function edit($id)
     {
         $goal = $this->service->find($id);
+        
+        $this->authorize('update', $goal);
 
         return view('goals.edit', compact('goal'));
     }
@@ -43,6 +49,8 @@ class GoalController
     public function update(GoalRequest $request, $id)
     {
         $goal = $this->service->find($id);
+
+        $this->authorize('update', $goal);
 
         $this->service->update($id, $request->validated());
 
@@ -52,6 +60,8 @@ class GoalController
     public function destroy($id)
     {
         $goal = $this->service->find($id);
+
+        $this->authorize('destroy', $goal);
 
         $this->service->delete($id);
 

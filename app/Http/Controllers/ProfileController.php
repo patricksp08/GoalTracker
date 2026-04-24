@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class ProfileController
+class ProfileController extends Controller
 {
     /**
      * Display the user's profile form.
